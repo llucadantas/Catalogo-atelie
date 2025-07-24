@@ -8,15 +8,21 @@ body {
     display: flex;
     flex: 1 1 100vw;
     flex-wrap: wrap;
+    font-family: 'Josefin Sans';
 }
 
-header, nav, main, aside, footer {
+header,
+nav,
+main,
+aside,
+footer {
     display: flex;
     margin: 3px;
-    background-color: grey;
+    background-color: rgb(255, 255, 255);
 }
 
-#openMenu, #closeMenu {
+#openMenu,
+#closeMenu {
     border: none;
     background: none;
     display: none;
@@ -24,20 +30,51 @@ header, nav, main, aside, footer {
     font-weight: bold;
     padding: 0px 5px 0px 5px;
     cursor: pointer;
+    color: #CC93AA;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
     flex: 1 1 100vw;
-    height: 100px;
+    height: 120px;
 }
 
+#titulo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    flex: 0 1 50vw;
+}
+
+#logo-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
 #logo {
-    flex: 0 1 200px;
-    background-color: azure;
+    width: 100px;
+    /* Ajuste o tamanho do seu logo */
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    color: #333;
 }
 
 nav {
-    flex: 1 1 100vw;
+    flex: 1 1 50vw;
     align-items: center;
     justify-content: flex-end;
 
@@ -47,8 +84,31 @@ nav a {
     text-decoration: none;
     color: inherit;
     margin: 3%;
-    font-size: 20pt;
+    font-size: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
+
+nav a i {
+    color: #CC93AA;
+    font-size: 24px;
+}
+
+#icon-sale {
+    transform: rotate(45deg);
+}
+
+#todos {
+    background-color: #CC93AA;
+    padding: 5px 10px 5px 10px;
+    border-radius: 9px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
 
 main {
     flex: 20 1 500px;
@@ -60,12 +120,13 @@ main section {
     width: 100%;
     height: 100vh;
     margin: 10px;
-    background:linear-gradient(rgb(182, 182, 182), grey, black)
+    background: linear-gradient(rgb(182, 182, 182), grey, black)
 }
 
 aside {
     flex: 1 1 100vw;
     height: 100vh;
+    background-color: black;
 }
 
 footer {
@@ -73,8 +134,43 @@ footer {
     height: 100px;
 }
 
-@media only screen and (max-width: 700px){
-    #openMenu, #closeMenu {
+@media only screen and (max-width: 1043px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 3%;
+        font-size: 15px;
+        gap: 5px;
+
+    }
+
+    nav a i {
+        color: #CC93AA;
+        font-size: 19px;
+    }
+
+    #icon-sale {
+        transform: rotate(45deg);
+    }
+
+    #todos {
+        background-color: #CC93AA;
+        padding: 5px 10px 5px 10px;
+        border-radius: 9px;
+        width: 80px;
+
+        font-size: 10px;
+    }
+
+
+}
+
+@media only screen and (max-width: 791px) {
+
+    #openMenu,
+    #closeMenu {
         display: block;
     }
 
@@ -102,12 +198,12 @@ footer {
         transition: 0.3s;
     }
 
-    #logo {
-        flex: 0 1 150px;
+    .logo-text {
+        display: none;
     }
 }
 
-@media only screen and (max-width: 918px){
+@media only screen and (max-width: 918px) {
 
     header {
         order: 0;
@@ -129,4 +225,3 @@ footer {
         order: 3;
     }
 }
-
