@@ -42,6 +42,7 @@ a {
 header {
     flex: 1 1 100vw;
     height: 120px;
+    
 }
 
 #titulo {
@@ -68,7 +69,7 @@ header {
 
 .logo-text {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     position: relative;
     color: #333;
 }
@@ -84,7 +85,7 @@ nav a {
     text-decoration: none;
     color: inherit;
     margin: 3%;
-    font-size: 20px;
+    font-size: 30px;
     display: flex;
     gap: 8px;
     align-items: center;
@@ -92,8 +93,9 @@ nav a {
 
 nav a i {
     color: #CC93AA;
-    font-size: 24px;
+    font-size: 32px;
 }
+
 
 #icon-sale {
     transform: rotate(45deg);
@@ -101,11 +103,10 @@ nav a i {
 
 #todos {
     background-color: #CC93AA;
-    padding: 5px 10px 5px 10px;
+    padding: 20px 10px;
     border-radius: 9px;
-    width: 100px;
     text-align: center;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 
@@ -125,8 +126,31 @@ main section {
 
 aside {
     flex: 1 1 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
-    background-color: black;
+    background-image: url(imgs/Fundo1692.jpeg);
+    background-size: cover;
+    font-size: 3rem;
+    gap: 30px;
+    z-index: -1;
+}
+
+
+
+#botoes {
+    display: flex;
+    gap: 80px;
+}
+
+#botoes a {
+    background-color: #CC93AA;
+    padding: 20px 40px;
+    border-radius: 20px;
+    text-align: center;
+
 }
 
 footer {
