@@ -6,34 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalago</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <a href="#" id="logo">LOGO</a>
+        <div id="titulo">
+            <a href="#" id="logo-link">
+                <img id="logo" src="imgs/Logo.jpeg" alt="logo">
+                <span class="logo-text">Ateliê Liliane Dantas</span>
+            </a>
+        </div>
+
+
 
         <button id="openMenu">&#9776</button>
-
         <nav id="menu">
             <button id="closeMenu">X</button>
-            <a href="#">Menu</a>
-            <a href="#">Contato</a>
-            <a href="#">Sobre</a>
-            <a href="#">Instagram</a>
+            <a href="#"><i class="bi bi-star-fill"></i>Destaques</a>
+            <a href="#"><i id="icon-sale" class="bi bi-ticket-fill"></i>Promoção</a>
+            <a id="todos" href="#">Todos Produtos</a>
+            <a id="cart" href="#"><i class="bi bi-cart-fill" style="font-size: 40px;"></i></a>
         </nav>
+        
     </header>
+    <hr>
     <aside>Relacionado</aside>
     <main>
         Conteudo
         <section></section>
     </main>
-    
+
     <footer>Rodapé</footer>
 
 
 
     <script type="text/javascript">
-          openMenu.addEventListener('click', () => {
+        openMenu.addEventListener('click', () => {
             menu.style.display = 'flex'
             openMenu.style.display = 'none'
 
@@ -44,9 +58,9 @@
                 menu.style.opacity = '1'
             }, 10)
 
-          })
+        })
 
-          closeMenu.addEventListener('click', () => {
+        closeMenu.addEventListener('click', () => {
             menu.style.opacity = '0'
 
             menu.style.right = (menu.offsetWidth * -1) + 'px'
@@ -56,7 +70,7 @@
                 openMenu.removeAttribute('style')
             }, 200)
 
-          })
+        })
 
 
     </script>
