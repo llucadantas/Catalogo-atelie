@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalago</title>
+    <title>Catálogo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
@@ -23,68 +23,70 @@
             </a>
         </div>
 
-
-
-        <button id="openMenu">&#9776</button>
+        <button id="openMenu">&#9776;</button>
         <nav id="menu">
             <button id="closeMenu">X</button>
             <a href="#"><i class="bi bi-star-fill"></i>Destaques</a>
             <a href="#"><i id="icon-sale" class="bi bi-ticket-fill"></i>Promoção</a>
             <a id="todos" href="#">Todos Produtos</a>
-            <a id="cart" href="#"><i class="bi bi-cart-fill" style="font-size: 50px;"></i></a>
+            <a id="cart" href="#"><i class="bi bi-cart-fill"></i></a>
         </nav>
-        
     </header>
-    <hr>
+
     <aside>
-        <h3>A Arte do Crochê</h3>
-        <h1>Ateliê Liliane Dantas</h1>
-        <h3>Faça já seu pedido!</h3>
-        <hr style="border: solid 2px; width: 400px;">
-        <div id="botoes">
-            <a href="#" style="background-color: #FFE0ED;"><i class="bi bi-instagram"></i> Instagram</a>
-            <a href="#"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+        <div id="conteudo-aside">
+            <h3>A Arte do Crochê</h3>
+            <h1>Ateliê Liliane Dantas</h1>
+            <h4>Faça já seu pedido!</h4>
+            <hr>
         </div>
+        <div id="botoes">
+            <a href="https://www.instagram.com/seu_usuario_aqui" target="_blank" rel="noopener noreferrer"
+                style="background-color: #FFE0ED;">
+                <i class="bi bi-instagram"></i>
+                <span>Instagram</span>
+            </a>
 
-
-    
+            <a href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer"
+                style="background-color: #CC93AA;">
+                <i class="bi bi-whatsapp"></i>
+                <span>Whatsapp</span>
+            </a>
+        </div>
     </aside>
+
     <main>
-        Conteudo
+        Conteúdo
         <section></section>
     </main>
 
     <footer>Rodapé</footer>
 
-
-
     <script type="text/javascript">
+        // Seleciona os elementos do DOM de forma segura
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const menu = document.getElementById('menu');
+
         openMenu.addEventListener('click', () => {
-            menu.style.display = 'flex'
-            openMenu.style.display = 'none'
-
-            menu.style.right = (menu.offsetWidth * -1) + 'px'
-
-            setTimeout(() => {
-                menu.style.right = '0'
-                menu.style.opacity = '1'
-            }, 10)
-
-        })
+            // Mostra o menu e adiciona a classe que o anima para a tela
+            menu.style.display = 'flex';
+            setTimeout(() => { // Pequeno delay para a transição funcionar
+                menu.classList.add('menu-aberto');
+            }, 10);
+            openMenu.style.display = 'none';
+        });
 
         closeMenu.addEventListener('click', () => {
-            menu.style.opacity = '0'
+            // Remove a classe, o que dispara a animação de saída no CSS
+            menu.classList.remove('menu-aberto');
 
-            menu.style.right = (menu.offsetWidth * -1) + 'px'
-
+            // Espera a animação de 300ms terminar para resetar os estilos
             setTimeout(() => {
-                menu.removeAttribute('style')
-                openMenu.removeAttribute('style')
-            }, 200)
-
-        })
-
-
+                menu.removeAttribute('style');
+                openMenu.removeAttribute('style');
+            }, 300);
+        });
     </script>
 </body>
 

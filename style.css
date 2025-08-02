@@ -42,7 +42,6 @@ a {
 header {
     flex: 1 1 100vw;
     height: 120px;
-    
 }
 
 #titulo {
@@ -58,10 +57,8 @@ header {
     gap: 20px;
 }
 
-
 #logo {
     width: 100px;
-    /* Ajuste o tamanho do seu logo */
     height: 100px;
     border-radius: 50%;
     text-align: center;
@@ -78,7 +75,6 @@ nav {
     flex: 1 1 50vw;
     align-items: center;
     justify-content: flex-end;
-
 }
 
 nav a {
@@ -96,6 +92,10 @@ nav a i {
     font-size: 32px;
 }
 
+/* Estilo do ícone do carrinho movido para o CSS */
+#cart i {
+    font-size: 50px;
+}
 
 #icon-sale {
     transform: rotate(45deg);
@@ -109,8 +109,6 @@ nav a i {
     font-size: 30px;
 }
 
-
-
 main {
     flex: 20 1 500px;
     flex-wrap: wrap;
@@ -121,36 +119,45 @@ main section {
     width: 100%;
     height: 100vh;
     margin: 10px;
-    background: linear-gradient(rgb(182, 182, 182), grey, black)
+    background: linear-gradient(rgb(182, 182, 182), grey, black);
 }
 
 aside {
     flex: 1 1 100vw;
-    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 120px);
     background-image: url(imgs/Fundo1692.jpeg);
     background-size: cover;
-    font-size: 3rem;
-    gap: 30px;
-    z-index: -1;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    font-size: 4.5rem;
 }
 
+#conteudo-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
 
 #botoes {
     display: flex;
-    gap: 80px;
+    gap: 18px;
 }
 
 #botoes a {
-    background-color: #CC93AA;
-    padding: 20px 40px;
+    padding: 20px 25px;
     border-radius: 20px;
-    text-align: center;
+    font-size: 3.5rem;
+    cursor: pointer;
+}
 
+#botoes a:hover {
+    background-color: white;
 }
 
 footer {
@@ -158,37 +165,169 @@ footer {
     height: 100px;
 }
 
-@media only screen and (max-width: 1043px) {
+hr {
+    border: solid 1px;
+    width: 400px;
+}
+
+@media only screen and (max-width: 1440px) {
+    header {
+        height: 100px;
+    }
+
+    aside {
+        height: calc(100vh - 100px);
+        font-size: 3rem;
+    }
+
+    hr {
+        width: 450px;
+    }
+
     .logo-text {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     nav a {
-        margin: 3%;
-        font-size: 15px;
-        gap: 5px;
-
+        font-size: 28px;
+        gap: 6px;
     }
 
     nav a i {
-        color: #CC93AA;
-        font-size: 19px;
+        font-size: 24px;
     }
 
-    #icon-sale {
-        transform: rotate(45deg);
+    #cart i {
+        font-size: 40px;
     }
 
     #todos {
-        background-color: #CC93AA;
-        padding: 5px 10px 5px 10px;
-        border-radius: 9px;
-        width: 80px;
-
-        font-size: 10px;
+        padding: 10px 15px;
+        font-size: 20px;
     }
 
+    #conteudo-aside {
+        font-size: 2.3rem;
+    }
 
+    #botoes a {
+        padding: 10px 30px;
+        border-radius: 15px;
+        font-size: 2.5rem;
+    }
+
+    #botoes {
+        gap: 17px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    hr {
+        width: 300px;
+    }
+
+    .logo-text {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 20px;
+        gap: 5.5px;
+    }
+
+    nav a i {
+        font-size: 20px;
+    }
+
+    #cart i {
+        font-size: 35px;
+    }
+
+    #todos {
+        padding: 8px 13px;
+        font-size: 18px;
+    }
+
+    aside {
+        font-size: 2.5rem;
+    }
+
+    #conteudo-aside {
+        font-size: 2.1rem;
+    }
+
+    #botoes a {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1043px) {
+    hr {
+        width: 250px;
+    }
+
+    aside {
+        font-size: 2rem;
+    }
+
+    #botoes a {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        font-size: 18px;
+        gap: 5.5px;
+    }
+
+    nav a i {
+        font-size: 20px;
+    }
+
+    #cart i {
+        font-size: 30px;
+    }
+
+    #todos {
+        padding: 6px 11px;
+        font-size: 17px;
+    }
+
+    #conteudo-aside {
+        font-size: 1.8rem;
+    }
+
+    #logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    #titulo {
+        margin-left: 40px;
+    }
+}
+
+@media only screen and (max-width: 918px) {
+    header {
+        order: 0;
+    }
+
+    main {
+        height: calc(100vh - 330px);
+        order: 2;
+    }
+
+    aside {
+        height: 80vh;
+        order: 1;
+    }
+
+    #conteudo-aside {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        order: 3;
+    }
 }
 
 @media only screen and (max-width: 791px) {
@@ -196,6 +335,7 @@ footer {
     #openMenu,
     #closeMenu {
         display: block;
+        margin-right: 25px;
     }
 
     #closeMenu {
@@ -213,39 +353,58 @@ footer {
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.95);
         align-items: center;
         justify-content: center;
         margin: 0;
         display: none;
+        /* JS controla a exibição */
         opacity: 0;
-        transition: 0.3s;
+        right: -100vw;
+        /* Posição inicial fora da tela */
+        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Classe adicionada pelo JS para ativar o menu */
+    nav.menu-aberto {
+        right: 0;
+        opacity: 1;
     }
 
     .logo-text {
         display: none;
     }
+
+    #botoes a {
+        font-size: 1.6rem;
+    }
 }
 
-@media only screen and (max-width: 918px) {
+@media only screen and (max-width: 500px) {
+    aside {
+        text-align: center;
+        /* Melhora o alinhamento em telas pequenas */
+    }
+
+    #conteudo-aside {
+        font-size: 1.4rem;
+    }
+
+    hr {
+        width: 90px;
+    }
 
     header {
-        order: 0;
+        height: 85px;
     }
 
-    main {
-        height: calc(100vh - 330px);
-        order: 2;
+    #logo {
+        width: 75px;
+        height: 75px;
     }
 
-    aside {
-        flex: 1 1 100vw;
-        height: 100px;
-        order: 1;
-
-    }
-
-    footer {
-        order: 3;
+    #botoes a {
+        font-size: 1.4rem;
+        padding: 10px 15px;
     }
 }
